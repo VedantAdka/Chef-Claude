@@ -107,12 +107,18 @@ ul.ingredients-list > li {
     font-size: 0.875rem;
     cursor: pointer;
 }
+.suggested-recipe-container {
+    color: #475467;
+    line-height: 28px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
 
 
-
+/* 
 .recipe-output {
   background: #f4f4f4;
   padding: 1rem;
   border-radius: 10px;
   margin-top: 1rem;
-}
+} */

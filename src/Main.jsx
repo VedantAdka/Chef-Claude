@@ -6,7 +6,7 @@ export default function Main() {
     const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const [loading, setLoading] = React.useState(false)
-
+    const ref=React.useRef(null)
     const ingredientsListItems = ingredients.map((ingredient) => (
         <li key={ingredient}>{ingredient}</li>
     ))
@@ -58,9 +58,11 @@ export default function Main() {
                     )}
 
                     {recipe && (
-                        <div className="recipe-output">
-                            <h3>Your Recipe</h3>
-                            <ReactMarkdown>{recipe}</ReactMarkdown>
+                        <div ref={ref} className="recipe-output">
+                            <section className="suggested-recipe-container">
+                                <h2>Chef Claude Recommends:</h2>
+                                <ReactMarkdown>{recipe}</ReactMarkdown>
+                            </section>
                         </div>
                     )}
                 </section>
