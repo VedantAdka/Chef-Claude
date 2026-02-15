@@ -7,6 +7,12 @@ export default function Main() {
     const [recipe, setRecipe] = React.useState("")
     const [loading, setLoading] = React.useState(false)
     const ref=React.useRef(null)
+
+    React.useEffect(() => {
+        if (recipe && ref.current) {
+            ref.current.scrollIntoView({ behavior: "smooth" })
+        }
+    }, [recipe])
     const ingredientsListItems = ingredients.map((ingredient) => (
         <li key={ingredient}>{ingredient}</li>
     ))
